@@ -1,0 +1,120 @@
+---
+layout: jtebase
+---
+
+.slides
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Lab 06 - Create Technical Rules (DRL)
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h2 Lab Goal
+      %h4 To create a technical rule (DRL) to total up the shopping cart items for Cool Store
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating rules (DRL)
+    :markdown
+      * First we will create a new rule:
+
+        `AUTHORING -> PROJECT AUTHORING -> NEW ITEM -> DRL FILE`
+
+        `RESOURCE NAME: Total Shopping Cart Items`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image49.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating rules (DRL)
+    :markdown
+      * Presented with an empty free text editor for our rule (DRL)
+      * add package name
+        * `package com.redhat.coolstore`
+      * add basic rule outline
+        * `rule "Total Shopping Cart Items"`
+        * `   ruleflow-group "pricing-rules"`
+        * `   no-loop true`
+        * `   when`
+        * `   then`
+        * `end`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image50.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating rules (DRL)
+    :markdown
+      * Now lets look at the core of this rule
+      * The condition (WHEN):
+        * `'There is a ShoppingCart'`
+        * assign a variable name to this ShoppingCart `'$sc'`
+        * `'There is a ShoppingCartItem with field shoppingCart equal to $sc'`
+        * assign a variable name to this ShoppingCartItem `'$sci'`
+      * Can use Fact Types in right column, just remove package names
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image51.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating rules (DRL)
+    :markdown
+      * The action (THEN) has four parts
+        * Modify value of $sc field cartItemTotal using formula
+        * `'$sc.getCartItemTotal() + ($sci.getPrice() * $sci.getQuanitity())'`
+        * Modify value of cartItemPromoSavings field using formula
+        * `'$sc.getCartItemPromoSavings() + ($sci.getPromoSavings() * $sci.getQuantity())'`
+        * update ShoppingCart: `'update( $sc );'`
+        * retract ShoppingCartItem: `'retract( $sci );'`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image52.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating rules (DRL)
+    :markdown
+      * Save the rule.
+      * Ensure your package builds:
+
+        `TOOLS -> PROJECT EDITOR -> BUILD & DEPLOY`
+
+        `(should see green pop-up 'Build Successful')`
+
+  %section(data-state="builddrl" )
+    .title-information
+
+  %section(data-state="questions" )
+    .title-information
+
+  %section(data-state="" )
+    .title-information
+    :markdown
+      <div style="float: left">
+        <img height="100" width="700" src="/images/references.jpg" />
+      </div>
+      * JBoss BRMS & BPM Suite Articles
+        * <font size="5">[_http://schabell.org/search/label/BRMS_] (http://schabell.org/search/label/BRMS) - [_http://schabell.org/search/label/BPMS_] (http://schabell.org/search/label/BPMS)</font>
+      * JBoss BPM Suite Demos
+        * <font size="5">[_http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html_] (http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html_] (http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html_] (http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html)</font>
+        * <font size="5">[_https://github.com/eschabell/business-resource-optimizer-demo_] (https://github.com/eschabell/business-resource-optimizer-demo)</font>
+        * <font size="5">[_https://github.com/eschabell/bpms-customer-evaluation-demo_] (https://github.com/eschabell/bpms-customer-evaluation-demo) (migration from BRMS 5)</font>
+      * JBoss xPaaS Demos
+        * <font size="5">[_https://github.com/eschabell/bpms-bam-dashboard_] (https://github.com/eschabell/bpms-bam-dashboard)</font>
+        * <font size="5">[_https://github.com/eschabell/openshift-bpm-bam-dashboard_] (https://github.com/eschabell/openshift-bpm-bam-dashboard)</font>
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Automate Your Business with JBoss Integration & BPM
+      %h5
+        :markdown
+          * [Lab 07 - Create Guided Decision Table ] (lab07.html)

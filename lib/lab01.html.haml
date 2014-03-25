@@ -1,0 +1,121 @@
+---
+layout: jtebase
+---
+
+.slides
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Lab 01 - JBoss BRMS installation
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h2 Lab Goal
+      %h4 To install and login to JBoss BRMS product
+
+
+  %section(data-state="cycling" )
+    .title-information
+      %h4 Install JBoss BRMS
+    :markdown
+      * Clone project (brms-install-demo).
+
+        `$ git clone https://github.com/eschabell/brms-install-demo.git`
+
+      * Add products, see installs/README for details.
+
+        `$ cp jboss-eap-6.1.1.zip brms-install-demo/installs/`
+
+        `$ cp jboss-brms-6.0.1.GA-redhat-2-deployable-eap6.x.zip brms-install-demo/installs/`
+
+      * run init.sh or init.bat and follow instructions to start server.
+
+        `./target/jboss-eap-6.1/bin/standalone.sh`
+
+  %section(data-state="brmsinstall" )
+    .title-information
+
+  %section(data-state="cycling" )
+    .title-information
+      %h4 JBoss BRMS Standalone Configuration
+    :markdown
+      * Some properties set to lock location git repository.
+
+      * Found in standalone.xml
+
+        `$ cat brms-install-demo/support/standalone.xml`
+
+        `<property name="org.uberfire.nio.git.dir" value="${jboss.home.dir}/bin"/>`
+
+      * Means all projects stored in .niogit/* can be found here:
+
+        `brms-install-demo/target/jboss-eap-6.1/bin/.niogit/`
+
+  %section(data-state="cycling" )
+    .title-information
+      %h4 JBoss BRMS User Configuration
+    :markdown
+      * User configuration was automated.
+      * Support directory contains user configuration files.
+
+        `$ cat support/application-users.properties`
+
+        `$ cat support/application-roles.properties`
+
+      * Installed into:
+
+        `target/jboss-eap-6.1/standalone/configuration/`
+
+  %section(data-state="cycling" )
+    .title-information
+      %h4 JBoss BRMS Available Users
+    :markdown
+      * Users have two categories:
+        * admin - access to all suite components.
+        * analyst - access to analyst workbench.
+
+      * Admin user and password:
+
+        `erics  -  bpmsuite`
+
+      * Analyst users:
+
+        `mary  -  bpmsuite`
+
+        `alan  -  bpmsuite`
+
+        `bob  -  bpmsuite`
+
+  %section(data-state="brmslogin" )
+    .title-information
+
+  %section(data-state="brmsdashboard" )
+    .title-information
+
+
+  %section(data-state="questions" )
+    .title-information
+
+  %section(data-state="" )
+    .title-information
+    :markdown
+      <div style="float: left">
+        <img height="100" width="700" src="/images/references.jpg" />
+      </div>
+      * JBoss BRMS & BPM Suite Articles
+        * <font size="5">[_http://schabell.org/search/label/BRMS_] (http://schabell.org/search/label/BRMS) - [_http://schabell.org/search/label/BPMS_] (http://schabell.org/search/label/BPMS)</font>
+      * JBoss BPM Suite Demos
+        * <font size="5">[_http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html_] (http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html_] (http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html_] (http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html)</font>
+        * <font size="5">[_https://github.com/eschabell/business-resource-optimizer-demo_] (https://github.com/eschabell/business-resource-optimizer-demo)</font>
+        * <font size="5">[_https://github.com/eschabell/bpms-customer-evaluation-demo_] (https://github.com/eschabell/bpms-customer-evaluation-demo) (migration from BRMS 5)</font>
+      * JBoss xPaaS Demos
+        * <font size="5">[_https://github.com/eschabell/bpms-bam-dashboard_] (https://github.com/eschabell/bpms-bam-dashboard)</font>
+        * <font size="5">[_https://github.com/eschabell/openshift-bpm-bam-dashboard_] (https://github.com/eschabell/openshift-bpm-bam-dashboard)</font>
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Automate Your Business with JBoss Integration & BPM
+      %h5
+        :markdown
+          * [Lab 02 - Create a new project] (lab02.html)

@@ -1,0 +1,214 @@
+---
+layout: jtebase
+---
+
+.slides
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Lab 03 - Create domain model
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h2 Lab Goal
+      %h4 To create a new domain model with the JBoss BRMS domain modeler
+
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new domain model
+    :markdown
+      * Head over to the project authoring perspective
+
+        `AUTHORING -> PROJECT AUTHORING`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image13.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new domain model
+    :markdown
+      * Open the domain modeler
+
+        `TOOLS -> DATA MODELER`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image18.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new domain model
+    :markdown
+      * Create Product
+        * in top right corner click on `+CREATE` button
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image19.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new domain model
+    :markdown
+      * Create Product and click `+OK` to get started
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image20.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new domain model
+    :markdown
+      * Add all fields as shown, hitting `+CREATE` to add each one
+        * `desc, Description, STRING`
+        * `itemId, Item ID, STRING`
+        * `name, Name, STRING`
+        * `price, Price, DOUBLE`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image21.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new domain model
+    :markdown
+      * Finished Product object in our data model
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image22.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new domain model
+    :markdown
+      * Finished Product object in our data model
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image22.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new domain model
+    :markdown
+      * Add the PromoEvent object to our data model
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image23.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new domain model
+    :markdown
+      * PromoEvent is an `EVENT` object, so add this as it's `ROLE`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image24.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new domain model
+    :markdown
+      * Add all fields to PromoEvent
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image25.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new domain model
+    :markdown
+      * Create ShoppingCart object
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image26.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new domain model
+    :markdown
+      * Add all fields for ShoppingCart object
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image27.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new domain model
+    :markdown
+      * Create ShoppingCartItem object
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image28.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new domain model
+    :markdown
+      * Add all fields for ShoppingCartItem object
+        * note: `shoppingCart` is object found in Type drop down menu
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image29.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new domain model
+    :markdown
+      * Now we add a `ShoppingCartItemList` to ShoppingCart object
+        * note: `ShoppingCartItem [0..N]` is found in Type drop down menu
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image30.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Save domain model
+    :markdown
+      * click on `SAVE` button to persist domain model
+      * pop-up bar should say  `Data model was saved`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image31.png" />
+      </div>
+
+  %section(data-state="questions" )
+    .title-information
+
+  %section(data-state="" )
+    .title-information
+    :markdown
+      <div style="float: left">
+        <img height="100" width="700" src="/images/references.jpg" />
+      </div>
+      * JBoss BRMS & BPM Suite Articles
+        * <font size="5">[_http://schabell.org/search/label/BRMS_] (http://schabell.org/search/label/BRMS) - [_http://schabell.org/search/label/BPMS_] (http://schabell.org/search/label/BPMS)</font>
+      * JBoss BPM Suite Demos
+        * <font size="5">[_http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html_] (http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html_] (http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html_] (http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html)</font>
+        * <font size="5">[_https://github.com/eschabell/business-resource-optimizer-demo_] (https://github.com/eschabell/business-resource-optimizer-demo)</font>
+        * <font size="5">[_https://github.com/eschabell/bpms-customer-evaluation-demo_] (https://github.com/eschabell/bpms-customer-evaluation-demo) (migration from BRMS 5)</font>
+      * JBoss xPaaS Demos
+        * <font size="5">[_https://github.com/eschabell/bpms-bam-dashboard_] (https://github.com/eschabell/bpms-bam-dashboard)</font>
+        * <font size="5">[_https://github.com/eschabell/openshift-bpm-bam-dashboard_] (https://github.com/eschabell/openshift-bpm-bam-dashboard)</font>
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Automate Your Business with JBoss Integration & BPM
+      %h5
+        :markdown
+          * [Lab 04 - Create Domain Specific Language (DSL)] (lab04.html)

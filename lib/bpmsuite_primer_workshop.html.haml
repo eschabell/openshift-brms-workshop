@@ -1,0 +1,234 @@
+---
+layout: jtebase
+---
+
+.slides
+  %section(data-state="cycling" )
+    .title-information
+    %h3 Automate Your Business with JBoss Integration & BPM
+
+
+  %section(data-state="cycling" )
+    .title-information
+    %h2 Lab agenda
+    :markdown
+      * Part I
+        * Taking a tour
+      * Part II
+        * Rules labs
+        * Process labs
+
+  %section(data-state="whatisbrms" )
+
+  %section(data-state="brmsexample1" )
+
+  %section(data-state="brmsexample2" )
+
+  %section(data-state="brmsexample3" )
+
+  %section(data-state="brmsexample4" )
+
+  %section(data-state="brmssolution1" )
+
+  %section(data-state="brmssolution2" )
+
+  %section(data-state="brmssolution3" )
+
+  %section(data-state="brmssolution4" )
+
+  %section(data-state="whatiscep" )
+
+  %section(data-state="touchpoints" )
+
+  %section(data-state="realtimedata" )
+
+  %section(data-state="whatisbpms" )
+
+  %section(data-state="bizprocess" )
+
+  %section(data-state="processsolution1" )
+
+  %section(data-state="processsolution2" )
+
+  %section(data-state="processsolution3" )
+
+  %section(data-state="processsolution4" )
+
+  %section(data-state="concepts" )
+
+  %section(data-state="listen1" )
+
+  %section(data-state="listen2" )
+
+  %section(data-state="listen3" )
+
+  %section(data-state="listen4" )
+
+  %section(data-state="listen5" )
+
+  %section(data-state="" )
+    .title-information
+    %h2 Golf Tee Example
+    :markdown
+      * There are four (4) golfers standing at a tee, from left to right:
+
+              # The golfer to immediate right of Fred is wearing blue pants.
+              # Joe is second.
+              # Bob is wearing plaid pants.
+              # Tom is not second or last and he is not wearing the orange pants.
+
+  %section(data-state="" )
+    .title-information
+    %h2 Golf Tee Example
+    :markdown
+      * Create all possible combinations:
+
+                String[] names = new String[]{"Fred", "Joe", "Bob", "Tom"};
+                String[] colors = new String[]{"red", "blue", "plaid", "orange" };
+                int[] positions = new int[] {00, 2, 3, 4};
+
+                for ( int n = 0; n < names.length; n++ ) {
+                  for ( int c = 0; c < colors.length; c++ ) {
+                    for ( int p = 0; p < positions.length; p++ ) {
+                      new Golfer(names[n], colors[c], positions[p]);
+                    }
+                  }
+                }
+
+  %section(data-state="" )
+    .title-information
+    %h2 Golf Tee Example
+    :markdown
+                // There is a golfer named Fred
+                fred : Golfer( name == "Fred" )
+
+  %section(data-state="" )
+    .title-information
+    %h2 Golf Tee Example
+    :markdown
+                // Joe is in position 2
+                joe : Golfer( name == "Joe",
+                            position == 2 && != fred.position,
+                            color != fred.color )
+
+  %section(data-state="" )
+    .title-information
+    %h2 Golf Tee Example
+    :markdown
+                // Tom is not in position one or four and is not wearing orange
+                tom : Golfer( name == "Tom",
+                   			position not in (1, 4, fred.position,
+                   			joe.position, bob.position),
+                   			color not in ("orange", "blue",
+                   		    fred.color, joe.color, bob.color))
+                fred : Golfer( name == "Fred" )
+
+
+  %section(data-state="" )
+    .title-information
+      %h2 Golf Tee Example
+      :markdown
+                  // The golfer on the right of Fred is wearing blue pants
+                  Golfer( position == (fred.getPosition() + 1),
+                   		color == "blue",
+                  	    this in ( joe, bob, tom ))
+
+  %section(data-state="" )
+    .title-information
+      %h2 Golf Tee Example
+      :markdown
+                  System.out.println( fred.getPosition() + " Fred " + fred.getColor() );
+                  System.out.println( joe.getPosition() + " Joe " + joe.getColor() );
+                  System.out.println( bob.getPosition() + " Bob " + bob.getColor() );
+                  System.out.println( tom.getPosition() + " Tom " + tom.getColor() );
+                  #############################
+                  1 Fred orange
+                  2 Joe blue
+                  4 Bob plaid
+                  3 Tom red
+
+  %section(data-state="" )
+    .title-information
+    %h2 Summary
+    :markdown
+      * Rules technology provides a new way to create business applications.
+        * business logic is "declared" in a rule language.
+        * gone is traditional procedural language.
+      * Rule engines are good for solving complex problems.
+      * A BRMS can be used to manage thousands of rules.
+
+  %section(data-state="inferenceengine" )
+    .title-information
+
+  %section(data-state="howitworks" )
+    .title-information
+
+  %section(data-state="arch" )
+    .title-information
+
+  %section(data-state="verses" )
+    .title-information
+
+  %section(data-state="brmscomponents" )
+    .title-information
+
+  %section(data-state="bpmcomponents" )
+    .title-information
+
+  %section(data-state="brmsprod" )
+    .title-information
+
+  %section(data-state="brmsarch" )
+    .title-information
+
+  %section(data-state="brmsprojects" )
+    .title-information
+
+  %section(data-state="bpmprod" )
+    .title-information
+
+  %section(data-state="bpmarch" )
+    .title-information
+
+  %section(data-state="bpmprojects" )
+    .title-information
+
+  %section(data-state="bpmprojects" )
+    .title-information
+
+  %section(data-state="planner" )
+    .title-information
+
+  %section(data-state="plannerdemo" )
+    .title-information
+
+  %section(data-state="demo" )
+    .title-information
+
+  %section(data-state="questions" )
+    .title-information
+
+  %section(data-state="" )
+    .title-information
+    :markdown
+      <div style="float: left">
+        <img height="100" width="700" src="/images/references.jpg" />
+      </div>
+      * JBoss BRMS & BPM Suite Articles
+        * <font size="5">[_http://schabell.org/search/label/BRMS_] (http://schabell.org/search/label/BRMS) - [_http://schabell.org/search/label/BPMS_] (http://schabell.org/search/label/BPMS)</font>
+      * JBoss BPM Suite Demos
+        * <font size="5">[_http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html_] (http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html_] (http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html_] (http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html)</font>
+        * <font size="5">[_https://github.com/eschabell/business-resource-optimizer-demo_] (https://github.com/eschabell/business-resource-optimizer-demo)</font>
+        * <font size="5">[_https://github.com/eschabell/bpms-customer-evaluation-demo_] (https://github.com/eschabell/bpms-customer-evaluation-demo) (migration from BRMS 5)</font>
+      * JBoss xPaaS Demos
+        * <font size="5">[_https://github.com/eschabell/bpms-bam-dashboard_] (https://github.com/eschabell/bpms-bam-dashboard)</font>
+        * <font size="5">[_https://github.com/eschabell/openshift-bpm-bam-dashboard_] (https://github.com/eschabell/openshift-bpm-bam-dashboard)</font>
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Automate Your Business with JBoss Integration & BPM
+      %h5
+        :markdown
+          * [Lab 01 - JBoss BRMS installation] (lab01.html)

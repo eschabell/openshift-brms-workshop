@@ -1,0 +1,217 @@
+---
+layout: jtebase
+---
+
+.slides
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Lab 02 - Create a new project
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h2 Lab Goal
+      %h4 To create a new project in the JBoss BRMS workbench
+
+  %section(data-state="" )
+    .title-information
+      %h4 Help / Fast Forward
+    :markdown
+      * In case you get stuck we provided a git repo containing all assets
+      * download: [coolstore-demo.git.zip] (coolstore-demo.git.zip)
+      * unzip repo on your system
+      * from the main menu, select `AUTHORING -> ADMINISTRATION`
+      * then select `REPOSITORIES -> CLONE REPOSITORY`
+      * In the popup window, provide the following data:
+        * `Repository name: coolstore-demo`
+        * `Organizational unit: Demos`
+        * `Git URL: file:///{path-to-unzipped}/coolstore-demo.git`
+
+  %section(data-state="fastforward" )
+    .title-information
+
+  %section(data-state="" )
+    .title-information
+      %h4 JBoss BRMS structure
+    :markdown
+      * JBoss BRMS structures assets as follows (top-down):
+        * Organizations
+        * Reporitories
+        * Projects
+        * Packages
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image04.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Add new organizational unit
+    :markdown
+      * After login you head over to the administration perspective:
+
+        `AUTHORING -> ADMINISTRATION`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image05.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Add new organizational unit
+    :markdown
+      * Now we need to manage organizational units to add a new one:
+
+        `ORGANIZATIONAL UNIT -> MANAGE ORGANIZATIONAL UNITS`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image06.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Add new organizational unit
+    :markdown
+      * Add button to open new organizational unit:
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image07.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Add new organizational unit
+    :markdown
+      * Provide the details
+        * click on `OK`
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image08.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new repository
+    :markdown
+      * We need to create or clone a repository.
+      * JBoss BRMS uses git as repository structure.
+        * we can clone existing git repositories.
+        * we can create a new one.
+      * For this lab, we create a new repository.
+        * creating a retail application.
+        * the Cool Store online web shop.
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new repository
+    :markdown
+      * Now we add a repository to our organizational unit:
+
+        `REPOSITORIES -> NEW REPOSITORY`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image10.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new repository
+    :markdown
+      * Provide the details
+        * click on `CREATE`
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image11.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new repository
+    :markdown
+      * You see the popup showing the repository was created.
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image12.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new project
+    :markdown
+      * A project is the main organizational and deployment unit for our business rules assets.
+      * A project is modeled like a maven project.
+        * when deployed, will be deployed as a maven artifact (jar and pom)
+        * when deployed, will be in a maven repo
+        * by default the internal repo from BRMS
+          * it will be ready to be incorporated and consumed by applications.
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new project
+    :markdown
+      * Head over to the project authoring perspective
+
+        `AUTHORING -> PROJECT AUTHORING`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image13.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new project
+    :markdown
+      * Now create a new project
+
+        `NEW ITEM -> PROJECT`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image14.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new project
+    :markdown
+      * Provide the details
+        * click on `OK`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image15.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new project
+    :markdown
+      * Provide the details, click on `FINISH`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image16.png" />
+      </div>
+
+  %section(data-state="projectcreated" )
+    .title-information
+
+  %section(data-state="questions" )
+    .title-information
+
+  %section(data-state="" )
+    .title-information
+    :markdown
+      <div style="float: left">
+        <img height="100" width="700" src="/images/references.jpg" />
+      </div>
+      * JBoss BRMS & BPM Suite Articles
+        * <font size="5">[_http://schabell.org/search/label/BRMS_] (http://schabell.org/search/label/BRMS) - [_http://schabell.org/search/label/BPMS_] (http://schabell.org/search/label/BPMS)</font>
+      * JBoss BPM Suite Demos
+        * <font size="5">[_http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html_] (http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html_] (http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html_] (http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html)</font>
+        * <font size="5">[_https://github.com/eschabell/business-resource-optimizer-demo_] (https://github.com/eschabell/business-resource-optimizer-demo)</font>
+        * <font size="5">[_https://github.com/eschabell/bpms-customer-evaluation-demo_] (https://github.com/eschabell/bpms-customer-evaluation-demo) (migration from BRMS 5)</font>
+      * JBoss xPaaS Demos
+        * <font size="5">[_https://github.com/eschabell/bpms-bam-dashboard_] (https://github.com/eschabell/bpms-bam-dashboard)</font>
+        * <font size="5">[_https://github.com/eschabell/openshift-bpm-bam-dashboard_] (https://github.com/eschabell/openshift-bpm-bam-dashboard)</font>
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Automate Your Business with JBoss Integration & BPM
+      %h5
+        :markdown
+          * [Lab 03 - Create domain model ] (lab03.html)

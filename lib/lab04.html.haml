@@ -1,0 +1,197 @@
+---
+layout: jtebase
+---
+
+.slides
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Lab 04 - Create a Domain Specific Language (DSL)
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h2 Lab Goal
+      %h4 To create a DSL and a guided rule based on this DSL to calculate the free shipping threshold for Cool Store
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new Domain Specific Language
+    :markdown
+      * First we will start with a Domain Specific Language (DSL)
+        * we will create an English DSL for our analysts
+        * this allows you to target the domain terms
+        * business users can then easily design rules
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new Domain Specific Language
+    :markdown
+      * We need to create a language for Promotion rules.
+      * Create a DSL that allows business to determine threshold for free shipping:
+        * `If customer spends X amount, then apply free shipping`
+      * Go on to next slide to see how we design our DSL.
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new Domain Specific Language
+    :markdown
+      * Head over to the project authoring perspective
+
+        `AUTHORING -> PROJECT AUTHORING`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image13.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new Domain Specific Language
+    :markdown
+      * Create our new DSL:
+
+        `New Item -> DSL DEFINITION`
+
+        `RESOURCE NAME: Promotions DSL`
+
+        `+OK`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image33.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new Domain Specific Language
+    :markdown
+      * You now have an empty text field to enter your DSL
+      * It is a definition divided into a WHEN and THEN section
+        * WHEN - here we decide what has to happen
+        * `'If customer spends X'`
+        * THEN - this is the results applied if WHEN happens
+        * `'apply free shipping'`, which is a formula we supply
+      * `SAVE` your DSL when finished.
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image34.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a new Domain Specific Language
+    :markdown
+      * If you want to skip the typing, paste this instead:
+
+        `[when]If customer spends ${var}=$sc : ShoppingCart( cartItemTotal >= {var} )`
+
+        `[then]Apply Free Shipping=$sc.setShippingPromoSavings( $sc.shippingTotal * -1 ); $sc.setShippingTotal( 0 ); update ($sc);`
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a Guided Rule using your DSL
+    :markdown
+      * We next will create a rule using the DSL we created
+      * Create a new guided rule
+
+        `NEW ITEM -> GUIDED RULE`
+
+        `RESOURCE NAME: Free Shipping Promotion DSL`
+
+        `CHECK 'Use Domain Specific Language (DSL)' BOX`
+
+        `+OK`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image35.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a Guided Rule using your DSL
+    :markdown
+      * The guided rule editor is now before you, but empty.
+      * Note the `+` signs on the right, it opens a list of options
+      * Top `+` is for the WHEN (condition) section of our rule
+        * pop-up shows overview of all possibilities, but we want DSL conditions
+        * check the `Only display DSL conditions` box
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image36.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a Guided Rule using your DSL
+    :markdown
+      * Now let us create our condition (WHEN):
+
+        `If customer spends $75`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image37.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a Guided Rule using your DSL
+    :markdown
+      * Note that the added DSL line has a `VAR` field
+        * this marks a field where we can add a dollar value
+      * next we need to add an action (THEN)
+        * use the `+` at the THEN level of the designer to add:
+
+          `Apply Free Shipping`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image38.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a Guided Rule using your DSL
+    :markdown
+      * Expand the 'show options' and add:
+
+        `check NO-LOOP box`
+
+        `RULEFLOW-GROUP: promo-rules`
+
+      * Save the rule.
+      * Ensure your package builds:
+
+        `TOOLS -> PROJECT EDITOR -> BUILD & DEPLOY`
+
+        `(should see green pop-up 'Build Successful')`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image39.png" />
+      </div>
+
+  %section(data-state="projectbuild" )
+    .title-information
+
+  %section(data-state="questions" )
+    .title-information
+
+  %section(data-state="" )
+    .title-information
+    :markdown
+      <div style="float: left">
+        <img height="100" width="700" src="/images/references.jpg" />
+      </div>
+      * JBoss BRMS & BPM Suite Articles
+        * <font size="5">[_http://schabell.org/search/label/BRMS_] (http://schabell.org/search/label/BRMS) - [_http://schabell.org/search/label/BPMS_] (http://schabell.org/search/label/BPMS)</font>
+      * JBoss BPM Suite Demos
+        * <font size="5">[_http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html_] (http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html_] (http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html_] (http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html)</font>
+        * <font size="5">[_https://github.com/eschabell/business-resource-optimizer-demo_] (https://github.com/eschabell/business-resource-optimizer-demo)</font>
+        * <font size="5">[_https://github.com/eschabell/bpms-customer-evaluation-demo_] (https://github.com/eschabell/bpms-customer-evaluation-demo) (migration from BRMS 5)</font>
+      * JBoss xPaaS Demos
+        * <font size="5">[_https://github.com/eschabell/bpms-bam-dashboard_] (https://github.com/eschabell/bpms-bam-dashboard)</font>
+        * <font size="5">[_https://github.com/eschabell/openshift-bpm-bam-dashboard_] (https://github.com/eschabell/openshift-bpm-bam-dashboard)</font>
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Automate Your Business with JBoss Integration & BPM
+      %h5
+        :markdown
+          * [Lab 05 - Create Guided Rules] (lab05.html)

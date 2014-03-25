@@ -1,0 +1,240 @@
+---
+layout: jtebase
+---
+
+.slides
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Lab 07 - Create Guided Decision Table
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h2 Lab Goal
+      %h4 To create a guided decision table for shipping pricing for Cool Store
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Decision Table
+    :markdown
+      * We will create a guided decision table
+
+        `AUTHORING -> PROJECT AUTHORING -> NEW ITEM -> GUIDED DECISION TABLE`
+
+        `RESOURCE NAME: Shipping Rules`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image54.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Decision Table
+    :markdown
+      * Presented with wizard to setup your decision table
+      * This is the Summary view
+        * `Name`
+        * `Path`
+        * `Table Format`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image55.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Decision Table
+    :markdown
+      * Imports - used to add your model types
+        * we only need to add a ShoppingCart
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image56.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Decision Table
+    :markdown
+      * Now we need to add facts to help define our column constraints
+        * select 'ShoppingCart' and add to 'Chosen Patterns'
+        * add 'Binding' for this: `'$sc'`
+        * ignore 'From Entry Point', not using event streams in table
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image57.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Decision Table
+    :markdown
+      * Next we define constraints on our shopping cart
+        * need to define what the first two columns will be applied to
+        * need a column for total shipping bottom to top range
+        * select $sc.ShoppingCart to see 'Available fields'
+        * select 'cartItemTotal:Double' and use arrow button to add to 'Conditions'
+        * note: Error will show that conditions need to be defined yet
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image58.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Decision Table
+    :markdown
+      * To finish, must define conditions
+        * select 'cartItemTotal' to bring up fields to edit at bottom
+        * fill in 'Column header (description):' `'Total >='`
+        * select 'Operator:' `'greater than or equal to'` from list
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image59.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Decision Table
+    :markdown
+      * Now complete the same again for the 'Total <' column
+        * select 'cartItemTotal' to bring up fields to edit at bottom
+        * fill in 'Column header (description):' `'Total >'`
+        * select 'Operator:' `'less than'` from list
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image60.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Decision Table
+    :markdown
+      * Next adding an action to update facts
+      * Update the ShoppingCart shippingTotal in the last column of the table
+        * select '$sc:ShoppingCart' to view 'Available fields'
+        * select 'shippingTotal:Double' field
+        * add to 'Chosen fields' with arrow button
+        * note: Error will show that definitions are not complete
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image61.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Decision Table
+    :markdown
+      * Select 'shippingTotal' in 'Chosen fields to expose definitions
+        * add 'Column header (description):' `'Shipping Total'`
+        * the rest of the fields can be left empty
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image62.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Decision Table
+    :markdown
+      * Leave 'Add Actions to insert Facts' alone, not needed
+      * View 'Columns to expand' to ensure box checked
+      * click 'Finish' button to display empty decision table
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image63.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Decision Table
+    :markdown
+      * Expand the '+ Decision table' along with exposed columns
+        * use 'Add row...' button to add 5 empty rows to table
+        * double click each field to add values as shown in image below
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image64.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Decision Table
+    :markdown
+      * Finally we want to set a few options
+        * click '+ New column'
+        * select 'Add a new Metadata \ Attribute column' from pop-up
+        * click 'OK'
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image65.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Decision Table
+    :markdown
+      * select from 'Attribute' drop down menu:
+        * `'no-loop'`
+      * Repeat adding new metadata \ attribute column as a new column
+        * select from 'Attribute' drop down menu
+        * `'ruleflow-group'`
+      * two options are available and two columns added
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image66.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Decision Table
+    :markdown
+      * finalize the options
+        * no-loop: check 'Default value:' box and hide column
+        * ruleflow-group: add to field 'shipping-rules' hide column
+      * final decision table show below
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image67.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Decision Table
+    :markdown
+      * Save the rule.
+      * Ensure your package builds:
+
+        `TOOLS -> PROJECT EDITOR -> BUILD & DEPLOY`
+
+        `(should see green pop-up 'Build Successful')`
+
+  %section(data-state="builddt" )
+    .title-information
+
+  %section(data-state="questions" )
+    .title-information
+
+  %section(data-state="" )
+    .title-information
+    :markdown
+      <div style="float: left">
+        <img height="100" width="700" src="/images/references.jpg" />
+      </div>
+      * JBoss BRMS & BPM Suite Articles
+        * <font size="5">[_http://schabell.org/search/label/BRMS_] (http://schabell.org/search/label/BRMS) - [_http://schabell.org/search/label/BPMS_] (http://schabell.org/search/label/BPMS)</font>
+      * JBoss BPM Suite Demos
+        * <font size="5">[_http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html_] (http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html_] (http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html_] (http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html)</font>
+        * <font size="5">[_https://github.com/eschabell/business-resource-optimizer-demo_] (https://github.com/eschabell/business-resource-optimizer-demo)</font>
+        * <font size="5">[_https://github.com/eschabell/bpms-customer-evaluation-demo_] (https://github.com/eschabell/bpms-customer-evaluation-demo) (migration from BRMS 5)</font>
+      * JBoss xPaaS Demos
+        * <font size="5">[_https://github.com/eschabell/bpms-bam-dashboard_] (https://github.com/eschabell/bpms-bam-dashboard)</font>
+        * <font size="5">[_https://github.com/eschabell/openshift-bpm-bam-dashboard_] (https://github.com/eschabell/openshift-bpm-bam-dashboard)</font>
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Automate Your Business with JBoss Integration & BPM
+      %h5
+        :markdown
+          * [Lab 08 - Create Rule Flow ] (lab08.html)
