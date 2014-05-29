@@ -22,3 +22,6 @@ That's it, you can now start your workshop at:
 
     http://brmsworkshop-$your_domain.rhcloud.com
 
+![Cool Store Workshop](https://raw.githubusercontent.com/eschabell/openshift-brms-workshop/master/lib/images/brms_bpms_workshop/header.png)
+
+![Cool Store App](https://raw.githubusercontent.com/eschabell/openshift-brms-workshop/master/lib/images/brms_bpms_workshop/image125.png)
