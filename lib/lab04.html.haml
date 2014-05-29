@@ -155,14 +155,39 @@ layout: jtebase
         `RULEFLOW-GROUP: promo-rules`
 
       * Save the rule.
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a Guided Rule using your DSL
+    :markdown
       * Ensure your package builds:
 
         `TOOLS -> PROJECT EDITOR -> BUILD & DEPLOY`
 
         `(should see green pop-up 'Build Successful')`
 
+      * if ERRORS around ShoppingCart, see next slide.
+
       <div style="float: right">
         <img src="/images/brms_bpms_workshop/image39.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Create a Guided Rule using your DSL
+    :markdown
+      * Errors could be due to ShoppingCart not on rule path, to add:
+
+        `CONFIG tab on the bottom of rule`
+
+        `+NEW ITEM button at top, select ShoppingCart from Import list`
+
+      * Save rule, build project, should see green pop-up 'Build Successful'.
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image168.png" />
+        <img src="/images/brms_bpms_workshop/image169.png" />
+        <img src="/images/brms_bpms_workshop/image170.png" />
       </div>
 
   %section(data-state="projectbuild" )
@@ -184,10 +209,9 @@ layout: jtebase
         * <font size="5">[_http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html_] (http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html)</font>
         * <font size="5">[_http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html_] (http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html)</font>
         * <font size="5">[_https://github.com/eschabell/business-resource-optimizer-demo_] (https://github.com/eschabell/business-resource-optimizer-demo)</font>
-        * <font size="5">[_https://github.com/eschabell/bpms-customer-evaluation-demo_] (https://github.com/eschabell/bpms-customer-evaluation-demo) (migration from BRMS 5)</font>
       * JBoss xPaaS Demos
-        * <font size="5">[_https://github.com/eschabell/bpms-bam-dashboard_] (https://github.com/eschabell/bpms-bam-dashboard)</font>
-        * <font size="5">[_https://github.com/eschabell/openshift-bpm-bam-dashboard_] (https://github.com/eschabell/openshift-bpm-bam-dashboard)</font>
+        * <font size="5">[_https://github.com/eschabell/cartridge-bpmPaaS_] (https://github.com/eschabell/cartridge-bpmPaaS)</font>
+        * <font size="5">[_https://github.com/eschabell/cartridge-bpmPaaS-generic-loan-demo_] (https://github.com/eschabell/cartridge-bpmPaaS-generic-loan-demo)</font>
 
   %section.title(data-state="cycling" )
     .title-information

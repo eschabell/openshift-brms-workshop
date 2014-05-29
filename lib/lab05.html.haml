@@ -25,6 +25,26 @@ layout: jtebase
 
         `(don't check the DSL box this time)`
 
+  %section(data-state="" )
+    .title-information
+      %h4 Creating guided rules
+    :markdown
+      * Start by importing model object `ShoppingCart` for this rule:
+
+        `CONFIG tab on the bottom of rule`
+
+        `+NEW ITEM button at top, select ShoppingCart from Import list`
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image168.png" />
+        <img src="/images/brms_bpms_workshop/image169.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating guided rules
+    :markdown
+      * Now return to the `Edit` tab an start designing our rule.
       * The condition (WHEN):
         * `'There is a ShoppingCart'`
         * assign a variable name to this ShoppingCart `'$sc'`
@@ -51,7 +71,7 @@ layout: jtebase
 
   %section(data-state="" )
     .title-information
-      %h4 Create a Guided Rule using your DSL
+      %h4 Creating guided rules
     :markdown
       * Expand the 'show options' and add:
 
@@ -94,7 +114,6 @@ layout: jtebase
         * promoSavings field
         * price field
 
-
   %section(data-state="" )
     .title-information
       %h4 Creating guided rules
@@ -113,13 +132,43 @@ layout: jtebase
     .title-information
       %h4 Creating guided rules
     :markdown
-      * The condition Part II
-        * `'There is a PromoEvent'`
-        * `'with all of the following'`
+      * The condition Part IIa
+        * top green `+` sign adds second condition
+        * start with from Entry Point and fill in: `'Promo Stream'`
+        * within condition use `click to add patterns`
+        * add `PromoEvent`, results in `'There is a PromoEvent'`
+
+        <div align="center">
+          <img src="/images/brms_bpms_workshop/image172.png" />
+          <img src="/images/brms_bpms_workshop/image173.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating guided rules
+    :markdown
+      * The condition Part IIb
+        * clicking on `PromoEvent` gives a pop-up
+        * select entry
+
+          `All of (And)`
+
+          results in `'with all of the following'`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image174.png" />
+          <img src="/images/brms_bpms_workshop/image175.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating guided rules
+    :markdown
+      * The condition Part IIc
+        * click on `all of the following"` line to add:
         * an itemId equal to the ShoppingCartItem `'$itemId'`
         * a percentageOff assigned variable `'$pctOff'`
         * percentageOff is over sliding window: `'none'`
-        * from Entry Point: `'Promo Stream'`
 
         <div style="float: right">
           <img src="/images/brms_bpms_workshop/image45.png" />
@@ -129,7 +178,7 @@ layout: jtebase
     .title-information
       %h4 Creating guided rules
     :markdown
-      * The action:
+      * The action part of our rule is next:
         * `'Modify value of ShoppingCartItem ($sci)'`
         * `'promoSavings is set to 0.0'`
         * `'Modify value of ShoppingCartItem ($sci)'`
@@ -179,10 +228,9 @@ layout: jtebase
         * <font size="5">[_http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html_] (http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html)</font>
         * <font size="5">[_http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html_] (http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html)</font>
         * <font size="5">[_https://github.com/eschabell/business-resource-optimizer-demo_] (https://github.com/eschabell/business-resource-optimizer-demo)</font>
-        * <font size="5">[_https://github.com/eschabell/bpms-customer-evaluation-demo_] (https://github.com/eschabell/bpms-customer-evaluation-demo) (migration from BRMS 5)</font>
       * JBoss xPaaS Demos
-        * <font size="5">[_https://github.com/eschabell/bpms-bam-dashboard_] (https://github.com/eschabell/bpms-bam-dashboard)</font>
-        * <font size="5">[_https://github.com/eschabell/openshift-bpm-bam-dashboard_] (https://github.com/eschabell/openshift-bpm-bam-dashboard)</font>
+        * <font size="5">[_https://github.com/eschabell/cartridge-bpmPaaS_] (https://github.com/eschabell/cartridge-bpmPaaS)</font>
+        * <font size="5">[_https://github.com/eschabell/cartridge-bpmPaaS-generic-loan-demo_] (https://github.com/eschabell/cartridge-bpmPaaS-generic-loan-demo)</font>
 
   %section.title(data-state="cycling" )
     .title-information

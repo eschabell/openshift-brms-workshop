@@ -1,0 +1,140 @@
+---
+layout: jtebase
+---
+
+.slides
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Lab 10 - Running the Cool Store Demo
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h2 Lab Goal
+      %h4 To install the shopping cart web application and run the Cool Store Demo
+
+
+  %section(data-state="cycling" )
+    .title-information
+      %h4 Install the Cool Store shopping cart web application
+    :markdown
+      * You can obtain the brms-coolstore-demo.war in the Cool Store demo project.
+
+        `$ git clone https://github.com/eschabell/brms-coolstore-demo.git`
+
+      * Deploy the web application into your brms-install-demo project.
+
+        `$ cd brms-coolstore-demo`
+
+        `$ git checkout 6.0.1`
+
+        `$ cp support/brms-coolstore-demo.war brms-install-demo/target/jboss-eap-6.1/standalone/deployments/`
+
+
+  %section(data-state="cycling" )
+    .title-information
+      %h4 Welcome to the Cool Store
+    :markdown
+      * Start the JBoss BRMS server
+      * Open the Cool Store web application:
+
+        `http://localhost:8080/brms-coolstore-demo`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image125.png" />
+        </div>
+
+  %section(data-state="cycling" )
+    .title-information
+      %h4 Demo the Cool Store
+    :markdown
+      * A simple demo shows changing shipping decision table values, picked up live in web application
+        * select `'Forge Laptop Sticker ($8.50)'` and click `'ADD TO CART'` button
+        * note shipping calculated to `'2.99'`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image126.png" />
+          <img src="/images/brms_bpms_workshop/image127.png" />
+        </div>
+
+  %section(data-state="cycling" )
+    .title-information
+      %h4 Demo the Cool Store
+    :markdown
+      * Now change the decision table shipping value in the JBoss BRMS dashboard
+        * login and open the decision table `'Shipping Rules'`
+        * change the `'Shipping Tier 1' 'Shipping Total'` value to `'22.99'`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image128.png" />
+          <img src="/images/brms_bpms_workshop/image129.png" />
+        </div>
+
+  %section(data-state="cycling" )
+    .title-information
+      %h4 Demo the Cool Store
+    :markdown
+      * Save the rule
+      * In poject editor we need to release a new version of our project
+      * Bump up the Version ID:
+
+        `TOOLS -> PROJECT EDITOR`
+
+        `VERSION ID: 2.0.1`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image130.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Demo the Cool Store
+    :markdown
+      * Ensure your package builds:
+
+        `TOOLS -> PROJECT EDITOR -> BUILD & DEPLOY`
+
+        `(should see green pop-up 'Build Successful')`
+
+  %section(data-state="cycling" )
+    .title-information
+      %h4 Demo the Cool Store
+    :markdown
+      * Clear the values in the Cool Store shopping cart and re-run the previous purchase
+        * select `'Forge Laptop Sticker ($8.50)'` and click `'ADD TO CART'` button
+        * note shipping calculated to `'22.99'`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image126.png" />
+          <img src="/images/brms_bpms_workshop/image131.png" />
+        </div>
+
+  %section(data-state="cycling" )
+    .title-information
+      %h4 Demo the Cool Store
+    :markdown
+      * Video showing how this is done:
+        * [_http://vimeo.com/ericschabell/install-coolstore-demo_] (http://vimeo.com/ericschabell/install-coolstore-demo)
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image171.png" />
+        </div>
+
+  %section(data-state="questions" )
+    .title-information
+
+  %section(data-state="" )
+    .title-information
+    :markdown
+      <div style="float: left">
+        <img height="100" width="700" src="/images/references.jpg" />
+      </div>
+      * JBoss BRMS & BPM Suite Articles
+        * <font size="5">[_http://schabell.org/search/label/BRMS_] (http://schabell.org/search/label/BRMS) - [_http://schabell.org/search/label/BPMS_] (http://schabell.org/search/label/BPMS)</font>
+      * JBoss BPM Suite Demos
+        * <font size="5">[_http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html_] (http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html_] (http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html_] (http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html)</font>
+        * <font size="5">[_https://github.com/eschabell/business-resource-optimizer-demo_] (https://github.com/eschabell/business-resource-optimizer-demo)</font>
+      * JBoss xPaaS Demos
+        * <font size="5">[_https://github.com/eschabell/cartridge-bpmPaaS_] (https://github.com/eschabell/cartridge-bpmPaaS)</font>
+        * <font size="5">[_https://github.com/eschabell/cartridge-bpmPaaS-generic-loan-demo_] (https://github.com/eschabell/cartridge-bpmPaaS-generic-loan-demo)</font>

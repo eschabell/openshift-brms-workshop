@@ -166,6 +166,15 @@ body {
 
 }
 
+.rewardsprojectcreated .reveal{
+
+    background-image: url("/images/brms_bpms_workshop/image142.png");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: auto;
+
+}
+
 .projectbuild .reveal{
 
     background-image: url("/images/brms_bpms_workshop/image40.png");
@@ -202,6 +211,24 @@ body {
 
 }
 
+.buildtests .reveal{
+
+    background-image: url("/images/brms_bpms_workshop/image120.png");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: auto;
+
+}
+
+.buildprocess .reveal{
+
+    background-image: url("/images/brms_bpms_workshop/image84.png");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: auto;
+
+}
+
 .projectcreated .reveal{
 
     background-image: url("/images/brms_bpms_workshop/image17.png");
@@ -210,6 +237,52 @@ body {
     background-size: auto;
 
 }
+
+.bpmsinstall .reveal{
+
+    background-image: url("/images/brms_bpms_workshop/image122.png");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: auto;
+
+}
+
+.bpmslogin .reveal{
+
+    background-image: url("/images/brms_bpms_workshop/image123.png");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: contain;
+
+}
+
+.bpmsdashboard .reveal{
+
+    background-image: url("/images/brms_bpms_workshop/image124.png");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: contain;
+
+}
+
+.ffbpms .reveal{
+
+    background-image: url("/images/brms_bpms_workshop/image132.png");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: auto;
+
+}
+
+.ffrewards .reveal{
+
+    background-image: url("/images/brms_bpms_workshop/image176.png");
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: auto;
+
+}
+
 
 .whatisbrms .reveal{
 

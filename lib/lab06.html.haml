@@ -16,6 +16,18 @@ layout: jtebase
     .title-information
       %h4 Creating rules (DRL)
     :markdown
+      * Technical rules generally not created here:
+        * developer teams tend authors technical rules
+        * they are then uploaded to the repository
+        * they appear here in a free form editor
+        * there is no syntax help in editor (caution...)
+        * business users advised to stick with guided rule editors
+        * for completeness we create one technical rule here...
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating rules (DRL)
+    :markdown
       * First we will create a new rule:
 
         `AUTHORING -> PROJECT AUTHORING -> NEW ITEM -> DRL FILE`
@@ -31,15 +43,20 @@ layout: jtebase
       %h4 Creating rules (DRL)
     :markdown
       * Presented with an empty free text editor for our rule (DRL)
-      * add package name
+      * add package name:
         * `package com.redhat.coolstore`
-      * add basic rule outline
-        * `rule "Total Shopping Cart Items"`
-        * `   ruleflow-group "pricing-rules"`
-        * `   no-loop true`
-        * `   when`
-        * `   then`
-        * `end`
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating rules (DRL)
+    :markdown
+      * Add basic rule outline, noting indentation:
+
+        `rule "Total Shopping Cart Items"`
+
+        `ruleflow-group "pricing-rules"`
+
+        `no-loop true`, `when`, `then`, `end`
 
         <div style="float: right">
           <img src="/images/brms_bpms_workshop/image50.png" />
@@ -107,10 +124,9 @@ layout: jtebase
         * <font size="5">[_http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html_] (http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html)</font>
         * <font size="5">[_http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html_] (http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html)</font>
         * <font size="5">[_https://github.com/eschabell/business-resource-optimizer-demo_] (https://github.com/eschabell/business-resource-optimizer-demo)</font>
-        * <font size="5">[_https://github.com/eschabell/bpms-customer-evaluation-demo_] (https://github.com/eschabell/bpms-customer-evaluation-demo) (migration from BRMS 5)</font>
       * JBoss xPaaS Demos
-        * <font size="5">[_https://github.com/eschabell/bpms-bam-dashboard_] (https://github.com/eschabell/bpms-bam-dashboard)</font>
-        * <font size="5">[_https://github.com/eschabell/openshift-bpm-bam-dashboard_] (https://github.com/eschabell/openshift-bpm-bam-dashboard)</font>
+        * <font size="5">[_https://github.com/eschabell/cartridge-bpmPaaS_] (https://github.com/eschabell/cartridge-bpmPaaS)</font>
+        * <font size="5">[_https://github.com/eschabell/cartridge-bpmPaaS-generic-loan-demo_] (https://github.com/eschabell/cartridge-bpmPaaS-generic-loan-demo)</font>
 
   %section.title(data-state="cycling" )
     .title-information

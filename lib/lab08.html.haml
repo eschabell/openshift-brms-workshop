@@ -1,0 +1,215 @@
+---
+layout: jtebase
+---
+
+.slides
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Lab 08 - Create Rule Flow
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h2 Lab Goal
+      %h4 To create a rule flow process for each time item added to shopping cart for Cool Store
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Rule Flow Process
+    :markdown
+      * We will create a business process
+
+        `AUTHORING -> PROJECT AUTHORING -> NEW ITEM -> BUSINESS PROCESS`
+
+        `RESOURCE NAME: PriceProcess`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image69.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Rule Flow Process
+    :markdown
+      * The process designer has a single start node
+      * we are going to design a 5 step process applying rules:
+        * `Start`
+        * `Apply Cart Promotion`
+        * `Total Shopping Cart Items`
+        * `Calculate Shipping`
+        * `Apply Shipping Promotions`
+        * `Total Shopping Cart`
+        * `End`
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Rule Flow Process
+    :markdown
+      * You can use Object Library to drag-and-drop tasks
+      * Easier to click a node and use mini-icons
+        * click on the start node
+        * click on mini-icon of task right of selected node
+        * automatically adds a transition and a task node
+        * repeat for 5 task nodes
+        * then click on mini-icon of end node (circle)
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image70.png" />
+          <img src="/images/brms_bpms_workshop/image71.png" />
+          <img src="/images/brms_bpms_workshop/image72.png" />
+          <img src="/images/brms_bpms_workshop/image73.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Rule Flow Process
+    :markdown
+      * Now we need to configure the node as a business rule task:
+        * click on the first task node
+        * click on mini-icon of wrench at bottom of node
+        * drop down menu appears, select 'Business Rule Task'
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image74.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Rule Flow Process
+    :markdown
+      * Finishing configuration of the node as a business rule task:
+        * task node now has 'rule' icon marking it in top left corner
+        * repeat for 5 task nodes
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image75.png" />
+          <img src="/images/brms_bpms_workshop/image76.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Rule Flow Process
+    :markdown
+      * Now we need to name each business rule task:
+        * close the left pane, open the right 'Properties' pane
+        * double click on the first business rule task
+        * pop-up text box to fill in name: `'Apply Cart Promotions'`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image77.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Rule Flow Process
+    :markdown
+      * On enter it appears in node, and in Properties panel 'Name' field
+
+      <div style="float: right">
+        <img src="/images/brms_bpms_workshop/image78.png" />
+      </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Rule Flow Process
+    :markdown
+      * Now finish naming the rest of the business rule tasks:
+        * `Total Shopping Cart Items`
+        * `Calculate Shipping`
+        * `Apply Shipping Promotions`
+        * `Total Shopping Cart`
+      * Note: to adjust the size view, buttons upper right in process designer
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image79.png" />
+          <img src="/images/brms_bpms_workshop/image80.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Rule Flow Process
+    :markdown
+      * At this point we need to associate a rule set with each task
+      * This is done by assigning a 'Ruleflow Group'
+        * click on business rule task 'Apply Cart Promotions'
+        * in right pane add `'promo-cart-rules`' to 'Ruleflow Group' field
+        * hit enter to finalize the field
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image81.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Rule Flow Process
+    :markdown
+      * Set the following business rule tasks 'Ruleflow Group' fields:
+        * Total Shopping Cart Items == `'pricing-rules'`
+        * Calculate Shipping == `'shipping-rules'`
+        * Apply Shipping Promotions == `'promo-rules'`
+        * Total Shopping Cart == `'total-rules'`
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Rule Flow Process
+    :markdown
+      * The final task is to make process business presentable
+      * A unique feature is the color coding of your process
+        * Green is our business rule task color
+        * select a business rule task
+        * open right 'Properties' pane
+        * in 'Graphical Settings' set 'Background Color' to green
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image82.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Rule Flow Process
+    :markdown
+      * Color the rest of the business rule tasks
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image83.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Rule Flow Process
+    :markdown
+      * Save the rule
+      * Ensure your package builds:
+
+        `TOOLS -> PROJECT EDITOR -> BUILD & DEPLOY`
+
+        `(should see green pop-up 'Build Successful')`
+
+  %section(data-state="buildprocess" )
+    .title-information
+
+  %section(data-state="questions" )
+    .title-information
+
+  %section(data-state="" )
+    .title-information
+    :markdown
+      <div style="float: left">
+        <img height="100" width="700" src="/images/references.jpg" />
+      </div>
+      * JBoss BRMS & BPM Suite Articles
+        * <font size="5">[_http://schabell.org/search/label/BRMS_] (http://schabell.org/search/label/BRMS) - [_http://schabell.org/search/label/BPMS_] (http://schabell.org/search/label/BPMS)</font>
+      * JBoss BPM Suite Demos
+        * <font size="5">[_http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html_] (http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html_] (http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html_] (http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html)</font>
+        * <font size="5">[_https://github.com/eschabell/business-resource-optimizer-demo_] (https://github.com/eschabell/business-resource-optimizer-demo)</font>
+      * JBoss xPaaS Demos
+        * <font size="5">[_https://github.com/eschabell/cartridge-bpmPaaS_] (https://github.com/eschabell/cartridge-bpmPaaS)</font>
+        * <font size="5">[_https://github.com/eschabell/cartridge-bpmPaaS-generic-loan-demo_] (https://github.com/eschabell/cartridge-bpmPaaS-generic-loan-demo)</font>
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Automate Your Business with JBoss Integration & BPM
+      %h5
+        :markdown
+          * [Lab 09 - Create Test Scenarios ] (lab09.html)

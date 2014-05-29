@@ -1,0 +1,455 @@
+---
+layout: jtebase
+---
+
+.slides
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Lab 09 - Create Test Scenarios
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h2 Lab Goal
+      %h4 To create test scenarios to validate our rules, events, and process for the Cool Store
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Designing rules, events, and process has completed
+      * Now it is time to test what we have created
+      * JBoss BRMS provides you with an online test scenario creation
+        * we will guide you through the first test
+        * you will design a few more based on detailed descriptions
+        * extra credit if you come up with more tests...
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Design a test to validate our Domain Specific Language (DSL)
+      * Our 'Guided Rule with DSL' is about giving free shipping
+      * `Free Shipping Promotion DSL Test:`
+        * if the shopping cart total value is $75 or more, free shipping
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * We will create a new test scenario
+
+        `AUTHORING -> PROJECT AUTHORING -> NEW ITEM -> TEST SCENARIO`
+
+        `RESOURCE NAME: Free Shipping Promotion DSL Test`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image85.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Tab at bottom of test scenario to access designers:
+        * `'Test Scenario'` - editor for test designer
+        * `'Config'` - editor to manage test data model
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image86.png" /><img src="/images/brms_bpms_workshop/image87.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * First we need to add a Shopping Cart object to populate our test
+        * using the `'Config'` tab, we add the object
+        * click on the `'+NEW ITEM'` button
+        * select `'ShoppingCart'` from the menu
+        * select `'+OK'`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image88.png" /><img src="/images/brms_bpms_workshop/image89.png" />
+          <img src="/images/brms_bpms_workshop/image90.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Now in Test Scenario tab we focus on these sections:
+        * `'Given'` - define input fact objects
+        * `'Expect'` - define method to call on given fact objects
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Provide the tests given fact objects
+      * Click on `'+GIVEN'` button in left top corner
+        * assign field `'Activate rule flow group: promo-rules'`
+        * click on `'ADD'` button next to field
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image91.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Click on `'+GIVEN'` button in left top corner
+        * assign field `'Insert a new fact: ShoppingCart'`
+        * assign field `'Fact name: $sc1'`
+        * click on `'ADD'` button next to field
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image92.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Add cartItemTotal & shippingTotal fields to shopping cart ($sc1):
+        * click on `'Add a field'` to `'ShoppingCart'[$sc1]`
+        * using menu, select `'cartItemTotal'` and click on `'OK'` button
+        * click on `'ShoppingCart'[$sc1]` to add a second field
+        * using menu, select `'shippingTotal'` and click on `'OK'` button
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image93.png" /><img src="/images/brms_bpms_workshop/image94.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Add values to cartItemTotal & shippingTotal fields to shopping cart ($sc1):
+        * click on pencil icon to add `'Literal value'` to `'cartItemTotal'`
+        * enter values of 75
+        * click on pencil icon to add `'Literal value'` to `'shippingTotal'`
+        * enter values of 10.99
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image95.png" /><img src="/images/brms_bpms_workshop/image96.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Add a second shopping cart ($sc2) with following fields & values:
+        * `'cartItemTotal'` with a value of 74.99
+        * `'shippingTotal'` with a value of 10.99
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image97.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Detail what we expect as the outcome of our test:
+        * click on `'+EXPECT'`
+        * we want to add a rule expected to fire
+        * select from right menu, `'Free Shipping Promotion DSL'`
+        * click on `'OK'`
+      * Now restrict rule to just one time
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image98.png" /><img src="/images/brms_bpms_workshop/image99.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Now we have an expectation as to the outcome of first shopping cart ($sc1)
+        * click on `'+EXPECT'`
+        * select from `'Fact value:'` menu, `'$sc1'`
+        * click on `'OK'`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image100.png" /><img src="/images/brms_bpms_workshop/image101.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Then add field `'shippingTotal'` by clicking little green arrow icon
+        * add field `'shippingTotal'`
+        * click on `'OK'`
+        * as shopping cart value is `75`, expect value of `0.0`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image102.png" /><img src="/images/brms_bpms_workshop/image103.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Now put in our expectation for the second shopping cart ($sc2)
+        * add the fact `'$sc2'`
+        * add field `'shippingTotal'`
+        * as shopping cart value is `74.99`, expect value of `10.99` (see decision table)
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image104.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * We can now save and run our test scenario:
+        * ensure configuration set to `'All rules may fire'`
+        * click on `'Save'` button and `'Run scenario'`
+        * looking for green `'Success'` in `'Report'` pane, otherwise fix test
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image105.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Note that there is little feedback on test failures
+      * This makes finding problems difficult at this time
+      * Strong hint is to design a test at a time
+        * if test works, move to next test
+        * run `'All Test Scenarios'` when more tests available
+        * ensures no breakage of other tests in suite
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image106.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Save your test scenario each time you create a new one
+      * Also ensure your package builds:
+
+        `TOOLS -> PROJECT EDITOR -> BUILD & DEPLOY`
+
+        `(should see green pop-up 'Build Successful')`
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Now create each of the following tests
+        * `Shipping Rules Test - One Cart`
+        * `Shipping Rules Test`
+        * `Total Shopping Cart Items Test`
+        * `Total Shopping Cart Test`
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Outline for `Shipping Rules Test - One Cart` test:
+        * use `shipping-rules` as rule flow group
+        * add `ShoppingCart` data object
+      * Given:
+        * `ShoppingCart` ($sc) with `cartItemTotal` of `0.00`
+      * Expect:
+        * expect rules `Row 1 Shipping Rules` to fire just `1` time
+        * `ShoppingCart [$sc]` has `shippingTotal` value of `2.99`
+        * (continued on next slide...)
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image107.png" />
+        </div>
+
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Use the `MORE` button to extend this test
+      * Given:
+        * modify and existing fact `ShoppingCart [$sc]`
+        * set `cartItemTotal` to `24.00` & `shippingTotal` to `0.0`
+      * Expect:
+        * expect rules `Row 1 Shipping Rules` to fire just `1` time
+        * `ShoppingCart [$sc]` has `shippingTotal` value of `2.99`
+        * (continued on next slide...)
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image108.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Add each of these test (use images) of the test using `MORE` button:
+        * (continued on next slide...)
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image109.png" />
+          <img src="/images/brms_bpms_workshop/image110.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Add each of these test (use images) of the test using `MORE` button
+        * then save and run the test
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image111.png" />
+          <img src="/images/brms_bpms_workshop/image112.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Outline for `Shipping Rules Test` test:
+        * use `shipping-rules` as rule flow group
+        * add `ShoppingCart` data object
+      * Given:
+        * add `ShoppingCart ($sc1)` through `ShoppingCart ($sc9)`
+        * add `cartItemTotal` with values `0.00`, `24.99`, `25`, `49.99`, `50`, `74.99`, `75`, `99.99`, `100`
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image113.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Expect:
+        * setup rules to fire as shown in image below
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image114.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Finish the Expect section:
+        * the carts $sc1 through $sc9 to have the results as show in image below
+        * save and test rule
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image115.png" />
+        </div>
+
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Outline for `Total Shopping Cart Items Test` test:
+        * use `pricing-rules` as rule flow group
+        * add `ShoppingCart` and `ShoppingCartItems` data objects
+      * Given:
+        * setup given section of this rule based on image below
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image116.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Outline for `Total Shopping Cart Items Test` test:
+      * Expect:
+        * setup given section of this rule based on image below
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image117.png" />
+        </div>
+
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * `Total Shopping Cart Test` test:
+        * use `total-rules` as rule flow group
+        * add `ShoppingCart` data object
+      * Given:
+        * setup given section of this rule based on image below
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image118.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * `Total Shopping Cart Test` test:
+      * Expect:
+        * setup given section of this rule based on image below
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image119.png" />
+        </div>
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Run the `'Total Shopping Cart Test'` test, it fails!? fix it! :-)
+
+        <div style="float: right">
+          <img src="/images/brms_bpms_workshop/image121.png" />
+        </div>
+
+
+  %section(data-state="" )
+    .title-information
+      %h4 Creating Test Scenarios
+    :markdown
+      * Now all test scenarios are finished
+      * Also ensure your package builds:
+
+        `TOOLS -> PROJECT EDITOR -> BUILD & DEPLOY`
+
+        `(should see green pop-up 'Build Successful')`
+
+  %section(data-state="buildtests" )
+    .title-information
+
+  %section(data-state="questions" )
+    .title-information
+
+  %section(data-state="" )
+    .title-information
+    :markdown
+      <div style="float: left">
+        <img height="100" width="700" src="/images/references.jpg" />
+      </div>
+      * JBoss BRMS & BPM Suite Articles
+        * <font size="5">[_http://schabell.org/search/label/BRMS_] (http://schabell.org/search/label/BRMS) - [_http://schabell.org/search/label/BPMS_] (http://schabell.org/search/label/BPMS)</font>
+      * JBoss BPM Suite Demos
+        * <font size="5">[_http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html_] (http://www.schabell.org/2013/10/jboss-bpm-suite-rocking-the-mortgage-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html_] (http://www.schabell.org/2013/11/jboss-bpm-suite-automated-lending-generic-loan-demo.html)</font>
+        * <font size="5">[_http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html_] (http://www.schabell.org/2013/12/bpms-examining-migrated-customer-evaluation-demo.html)</font>
+        * <font size="5">[_https://github.com/eschabell/business-resource-optimizer-demo_] (https://github.com/eschabell/business-resource-optimizer-demo)</font>
+      * JBoss xPaaS Demos
+        * <font size="5">[_https://github.com/eschabell/cartridge-bpmPaaS_] (https://github.com/eschabell/cartridge-bpmPaaS)</font>
+        * <font size="5">[_https://github.com/eschabell/cartridge-bpmPaaS-generic-loan-demo_] (https://github.com/eschabell/cartridge-bpmPaaS-generic-loan-demo)</font>
+
+  %section.title(data-state="cycling" )
+    .title-information
+      %h4 Automate Your Business with JBoss Integration & BPM
+      %h5
+        :markdown
+          * [Lab 10 - Running the Cool Store Demo] (lab10.html)
