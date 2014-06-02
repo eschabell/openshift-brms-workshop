@@ -1,4 +1,4 @@
-Red Hat JBoss BMRS Workshop
+Red Hat JBoss BRMS Workshop
 ===========================
 This git repository helps you get up and running quickly with a 
 Cloud hosted workshop on JBoss BRMS that gets you
