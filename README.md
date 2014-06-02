@@ -1,7 +1,7 @@
-Awestruct JBoss BMRS 6 Workshop on OpenShift 
-============================================
-This git repository helps you get up and running quickly with a ruby based
-Awestruct generated site to host the workshop on JBoss BRMS that gets you
+Red Hat JBoss BMRS Workshop
+===========================
+This git repository helps you get up and running quickly with a 
+Cloud hosted workshop on JBoss BRMS that gets you
 started building your very own Cool Store retail webshop.
 
 The web shop project will have you designing guided rules, technical rules, 
