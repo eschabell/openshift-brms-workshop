@@ -16,15 +16,12 @@ layout: jtebase
     .title-information
       %h4 Install JBoss BRMS
     :markdown
-      * Clone project (brms-install-demo), see README for details.
 
-        `$ git clone https://github.com/eschabell/brms-install-demo.git`
+      * <a href="https://github.com/eschabell/brms-install-demo/archive/master.zip" target="_blank">Download and unzip.</a>
 
-      * Add products, see installs/README for details.
+      * Add product installer, see installs/README for details.
 
-        `$ cp jboss-eap-6.1.1.zip brms-install-demo/installs/`
-
-        `$ cp jboss-brms-6.0.1.GA-redhat-4-deployable-eap6.x.zip brms-install-demo/installs/`
+        `$ cp jboss-brms-installer-6.0.2.GA-redhat-5.jar brms-install-demo/installs/`
 
       * run init.sh or init.bat and follow instructions to start server.
 
@@ -57,8 +54,6 @@ layout: jtebase
       * User configuration was automated.
       * Support directory contains user configuration files.
 
-        `$ cat support/application-users.properties`
-
         `$ cat support/application-roles.properties`
 
       * Installed into:
@@ -75,15 +70,11 @@ layout: jtebase
 
       * Admin user and password:
 
-        `erics  -  bpmsuite`
+        `erics  -  jbossbrms1!`
 
       * Analyst users:
 
-        `mary  -  bpmsuite`
-
-        `alan  -  bpmsuite`
-
-        `bob  -  bpmsuite`
+        `erics  -  jbossbrms1!`
 
   %section(data-state="cycling" )
     .title-information
@@ -91,14 +82,13 @@ layout: jtebase
     :markdown
       * [http://localhost:8080/business-central] (http://localhost:8080/business-central)
         * user: erics
-        * passwd: bpmsuite
+        * passwd: jbossbrms1!
 
   %section(data-state="brmslogin" )
     .title-information
 
   %section(data-state="brmsdashboard" )
     .title-information
-
 
   %section(data-state="questions" )
     .title-information
