@@ -84,9 +84,9 @@ layout: jtebase
     :markdown
       * The action (THEN) has four parts
         * Modify value of $sc field cartItemTotal using formula
-        * `'$sc.getCartItemTotal() + ($sci.getPrice() * $sci.getQuanitity())'`
+        * `'$sc.setCartItemTotal( $sc.getCartItemTotal() + ($sci.getPrice() * $sci.getQuantity()));'`
         * Modify value of cartItemPromoSavings field using formula
-        * `'$sc.getCartItemPromoSavings() + ($sci.getPromoSavings() * $sci.getQuantity())'`
+        * `'$sc.setCartItemPromoSavings($sc.getCartItemPromoSavings() + ($sci.getPromoSavings() * $sci.getQuantity()));'`
         * update ShoppingCart: `'update( $sc );'`
         * retract ShoppingCartItem: `'retract( $sci );'`
 
