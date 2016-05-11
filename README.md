@@ -10,7 +10,7 @@ a decision table, a ruleflow, and deploying a Java WAR of the web shop.
 
 Install with one click
 ----------------------
-[![Click to  install OpenShift](http://launch-shifter.rhcloud.com/launch/light/Click to  install.svg)](https://openshift.redhat.com/app/console/application_type/custom?&cartridges[]=ruby-1.9&initial_git_url=https://github.com/eschabell/openshift-brms-workshop.git&name=brmsworkshop)
+[![Click to  install OpenShift](http://launch-shifter.rhcloud.com/launch/light/Click to  install.svg)](https://openshift.redhat.com/app/console/application_type/custom?&cartridges[]=ruby-2.0&initial_git_url=https://github.com/eschabell/openshift-brms-workshop.git&name=brmsworkshop)
 
 
 Manual setup on OpenShift
@@ -19,7 +19,7 @@ Create an account at http://openshift.redhat.com/
 
 Create a ruby application
 
-    rhc app create brmsworkshop -t ruby-1.9 --from-code git://github.com/eschabell/openshift-brms-workshop.git
+    rhc app create brmsworkshop -t ruby-2.0 --from-code git://github.com/eschabell/openshift-brms-workshop.git
 
 That's it, you can now start your workshop at:
 

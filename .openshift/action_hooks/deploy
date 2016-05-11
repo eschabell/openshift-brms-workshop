@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "* Generating site"
+
+rm -rf ${OPENSHIFT_REPO_DIR}public
+mkdir -p ${OPENSHIFT_REPO_DIR}public
+
+cd ${OPENSHIFT_REPO_DIR} && bundle exec awestruct -P production -g --source-dir ${OPENSHIFT_REPO_DIR}lib --output-dir ${OPENSHIFT_REPO_DIR}public --force
+
+echo "* Done"
